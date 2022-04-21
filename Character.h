@@ -2,14 +2,15 @@
 #ifndef CHARACTER_H
 #define CHARACTER_H
 
-#include "Weapon.h"
-#include <vector>
-
 class Character {
-private:
-
 public:
-	
+	Character() {};
+	virtual void getName() = 0;
+	virtual void getHealth() = 0;
 };
+
+
+
+
 
 #endif

@@ -7,9 +7,11 @@
 class Weapon {
 private:
 
-	Weapon* myWeapons[5];
 	std::string name;
 	int damage;
+
+	Weapon* myWeapons[5];
+	int numWeapons;
 
 public:
 	
@@ -22,7 +24,8 @@ public:
 	void setName(std::string);
 	void setDamage(int);
 
-	void inventory();
+	void inv();
+	void showInv();
 
 };
 
@@ -48,13 +51,20 @@ void Weapon::setDamage(int d)
 	damage = d;
 }
 
-void Weapon::inventory()
+void Weapon::inv()
 {
-	myWeapons[0] = new Weapon("Sword", 6);
-	myWeapons[1] = new Weapon("Axe", 5);
-	myWeapons[2] = new Weapon("Bow", 7);
-	myWeapons[3] = new Weapon("Club", 7);
-	myWeapons[4] = new Weapon("Knife", 4);
+	numWeapons = 0;
+	myWeapons[numWeapons++] = new Weapon("Sword", 6);
+	myWeapons[numWeapons++] = new Weapon("Axe", 5);
+	myWeapons[numWeapons++] = new Weapon("Bow", 7);
+	myWeapons[numWeapons++] = new Weapon("Club", 7);
+	myWeapons[numWeapons++] = new Weapon("Knife", 4);
 }
 
+void Weapon::showInv()
+{
+	for (int i = 0; i < numWeapons; i++) {
+		std::cout << myWeapons[i]->getWeapon() << " " << myWeapons[i]->getDamage() << std::endl;
+	}
+}
 #endif

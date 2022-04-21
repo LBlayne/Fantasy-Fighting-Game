@@ -2,6 +2,10 @@
 //Fantasy Fighting Game
 //cst-210
 
-int main() {
+#include "Character.h"
 
+int main() {
+	srand(time(NULL));
+
+	
 }
