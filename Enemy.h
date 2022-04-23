@@ -17,24 +17,33 @@ public:
 	Enemy();
 	Enemy(string, int);
 
-	void getName();
-	void getHealth();
+	void setName(string);
+	void setHealth(int);
+
+	string getName() { return eName; };
+	int getHealth() { return eHealth; };
 };
 
-Enemy::Enemy() {
-
+Enemy::Enemy() 
+{
+	eName = "";
+	eHealth = 0;
 }
 
-Enemy::Enemy(string, int)
+Enemy::Enemy(string n, int h)
 {
+	eName = n;
+	eHealth = h;
 }
 
-void Enemy::getName()
+void Enemy::setName(string n)
 {
+	eName = n;
 }
 
-void Enemy::getHealth()
+void Enemy::setHealth(int h)
 {
+	eHealth = h;
 }
 
 #endif

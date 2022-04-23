@@ -3,6 +3,7 @@
 #define PLAYER_H
 
 #include "Character.h"
+#include "Weapon.h"
 #include <string>
 
 using std::string;
@@ -16,26 +17,34 @@ public:
 	Player();
 	Player(string, int);
 
-	void getName();
-	void getHealth();
+	void setName(string);
+	void setHealth(int);
+
+	string getName() { return cName; };
+	int getHealth() { return cHealth; };
+
 };
 
 Player::Player()
 {
-
+	cName = "";
+	cHealth = 0;
 }
 
-Player::Player(string, int)
+Player::Player(string n, int h)
 {
-
+	cName = n;
+	cHealth = h;
 }
 
-inline void Player::getName()
+void Player::setName(string n)
 {
+	cName = n;
 }
 
-inline void Player::getHealth()
+void Player::setHealth(int h)
 {
+	cHealth = h;
 }
 
 #endif

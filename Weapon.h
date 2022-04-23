@@ -3,6 +3,7 @@
 #define WEAPON_H
 
 #include <string>
+#include <iostream>
 
 class Weapon {
 private:
@@ -24,7 +25,6 @@ public:
 	void setName(std::string);
 	void setDamage(int);
 
-	void inv();
 	void showInv();
 
 };
@@ -33,6 +33,7 @@ Weapon::Weapon()
 {
 	name = "";
 	damage = 0;
+	
 }
 
 Weapon::Weapon(std::string n, int d)
@@ -49,16 +50,6 @@ void Weapon::setName(std::string n)
 void Weapon::setDamage(int d)
 {
 	damage = d;
-}
-
-void Weapon::inv()
-{
-	numWeapons = 0;
-	myWeapons[numWeapons++] = new Weapon("Sword", 6);
-	myWeapons[numWeapons++] = new Weapon("Axe", 5);
-	myWeapons[numWeapons++] = new Weapon("Bow", 7);
-	myWeapons[numWeapons++] = new Weapon("Club", 7);
-	myWeapons[numWeapons++] = new Weapon("Knife", 4);
 }
 
 void Weapon::showInv()
